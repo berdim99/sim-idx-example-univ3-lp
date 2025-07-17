@@ -86,6 +86,7 @@ contract Listener is
     address latestPool;
 
     /// Event to index the ownership changes of a positions in the NFTPositionManager.
+    /// @custom:index po_idx1 BTREE (pool, block_number, to_address);
     event PositionOwnerChanges(
         bytes32 txn_hash,
         uint256 block_number,
@@ -96,6 +97,7 @@ contract Listener is
         address pool
     );
     /// Event to index the changes in pool ticks
+    /// @custom:index po_tick_idx1 BTREE (pool, block_number);
     event PoolTicksPerBlock(
         bytes32 txn_hash, 
         uint256 block_number, 
@@ -109,6 +111,7 @@ contract Listener is
         uint64 token1_decimals
     );
     /// Event to track changes in liquidity of positions
+    /// @custom:index lp_idx1 BTREE (pool, block_number);
     event LpEvents(
         bytes32 txn_hash,
         uint256 block_number,
