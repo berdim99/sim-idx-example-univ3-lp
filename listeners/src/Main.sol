@@ -111,7 +111,6 @@ contract Listener is
         uint64 token1_decimals
     );
     /// Event to track changes in liquidity of positions
-    ///
     /// @custom:index lp_idx1 BTREE (pool, block_number);
     event LpEvents(
         bytes32 txn_hash,
